@@ -5021,18 +5021,11 @@ body.is-loaded .site-loader {
 
 /* Final hero visual: people-focused recruitment key visual */
 .hero-section .placeholder-truck {
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.34) 34%, rgba(255, 255, 255, 0.02) 58%),
-    linear-gradient(112deg, rgba(255, 255, 255, 0.92) 0 20%, rgba(102, 184, 255, 0.24) 20.2% 22.4%, transparent 22.6% 100%),
-    url("assets/hero-team.png") center center / cover no-repeat;
+  background: url("assets/hero-team.png") center center / cover no-repeat;
 }
 
 .hero-image-copy {
-  top: 36%;
-  left: clamp(18px, 6vw, 110px);
-  width: min(82vw, 980px);
-  gap: clamp(6px, 1.1vw, 12px);
-  transform: skewX(-9deg);
+  display: none;
 }
 
 .hero-image-copy span {
@@ -5055,7 +5048,7 @@ body.is-loaded .site-loader {
 
 @media (max-width: 899px) {
   .hero-section .placeholder-truck {
-    background-position: 58% center;
+    background-position: left center;
   }
 
   .hero-image-copy {
@@ -5078,7 +5071,7 @@ body.is-loaded .site-loader {
 
 @media (max-width: 390px) {
   .hero-section .placeholder-truck {
-    background-position: 61% center;
+    background-position: left center;
   }
 
   .hero-image-copy {
@@ -5087,5 +5080,103 @@ body.is-loaded .site-loader {
 
   .hero-image-copy span {
     font-size: clamp(22px, 6.8vw, 28px);
+  }
+}
+
+/* Futuristic traffic visual for SOCIAL VALUE */
+.meaning-section .placeholder-city {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  min-height: clamp(320px, 44vw, 540px);
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 7%, 100% 100%, 8% 100%);
+  background:
+    radial-gradient(circle at 22% 24%, rgba(255, 55, 55, 0.28), transparent 17%),
+    radial-gradient(circle at 82% 18%, rgba(102, 184, 255, 0.34), transparent 24%),
+    linear-gradient(180deg, rgba(2, 9, 19, 0.05) 0%, rgba(2, 9, 19, 0.68) 58%, rgba(0, 0, 0, 0.95) 100%),
+    linear-gradient(135deg, #071426 0%, #12355b 45%, #05070b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation: trafficPulse 5.2s ease-in-out infinite alternate;
+}
+
+.meaning-section .placeholder-city span {
+  position: absolute;
+  left: clamp(22px, 5vw, 58px);
+  bottom: clamp(22px, 5vw, 54px);
+  z-index: 6;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: var(--condensed);
+  font-size: clamp(34px, 7vw, 82px);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  text-shadow: 0 16px 34px rgba(0, 0, 0, 0.42);
+}
+
+.meaning-section .placeholder-city::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border: 0;
+  background:
+    linear-gradient(90deg, transparent 0 9%, rgba(255, 255, 255, 0.24) 9.4% 9.7%, transparent 10.1% 20%, rgba(255, 255, 255, 0.18) 20.3% 20.6%, transparent 21% 100%) 0 0 / 100% 42% no-repeat,
+    linear-gradient(90deg, transparent 0 18%, rgba(255, 255, 255, 0.22) 18.3% 18.6%, transparent 19% 31%, rgba(255, 255, 255, 0.16) 31.3% 31.6%, transparent 32% 100%) 0 10% / 100% 34% no-repeat,
+    linear-gradient(180deg, transparent 0 58%, rgba(255, 255, 255, 0.22) 58.2% 58.6%, transparent 59% 100%);
+  clip-path: polygon(0 19%, 100% 0, 100% 53%, 0 72%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.meaning-section .placeholder-city::after {
+  content: "";
+  position: absolute;
+  inset: auto -14% -10% -14%;
+  z-index: 3;
+  width: auto;
+  height: 64%;
+  border: 0;
+  background:
+    linear-gradient(108deg, transparent 0 38%, rgba(255, 255, 255, 0.54) 38.2% 38.7%, transparent 39% 100%),
+    linear-gradient(73deg, transparent 0 44%, rgba(255, 255, 255, 0.42) 44.2% 44.6%, transparent 45% 100%),
+    linear-gradient(96deg, transparent 0 49%, rgba(255, 34, 34, 0.92) 49.2% 50%, rgba(255, 164, 55, 0.55) 50.2% 50.8%, transparent 51.2% 100%),
+    linear-gradient(80deg, transparent 0 57%, rgba(255, 30, 30, 0.78) 57.2% 58.2%, transparent 58.8% 100%),
+    linear-gradient(100deg, transparent 0 64%, rgba(102, 184, 255, 0.74) 64.2% 64.7%, transparent 65% 100%),
+    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.36) 100%);
+  transform: perspective(680px) rotateX(56deg) translateY(14%);
+  transform-origin: bottom center;
+  filter: drop-shadow(0 0 18px rgba(255, 42, 42, 0.48));
+  pointer-events: none;
+}
+
+@keyframes trafficPulse {
+  from {
+    filter: saturate(1) contrast(1);
+  }
+
+  to {
+    filter: saturate(1.18) contrast(1.08);
+  }
+}
+
+@media (max-width: 899px) {
+  .meaning-section .placeholder-city {
+    min-height: 330px;
+    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 100%);
+  }
+
+  .meaning-section .placeholder-city span {
+    font-size: clamp(32px, 12vw, 58px);
   }
 }
